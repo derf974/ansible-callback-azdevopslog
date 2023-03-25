@@ -1,0 +1,13 @@
+---
+- name: Test azure devops
+  hosts: localhost
+  connection: local
+
+  tasks:
+  - name: show id 
+    shell:
+      cmd: "id"
+
+  - name: debug
+    debug:
+      msg: "Am I a fougere?"
