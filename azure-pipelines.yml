@@ -13,11 +13,16 @@ steps:
     set -x  
     ansible-galaxy collection build
     ansible-galaxy collection install *.tar.gz
+    ansible-galaxy collection install hpe.monkeyble
 - task: Ansible@0
   inputs:
     ansibleInterface: 'agentMachine'
     playbookPathOnAgentMachine: 'playbook/demo.yml'
     inventoriesAgentMachine: 'hostList'
     inventoryHostListAgentMachine: 'localhost'
+    failOnStdErr: false
+    args: >
+      -e "@monkeyble.yml" 
+      -e "monkeyble_scenario=validate_test_1"
   env:
     ANSIBLE_CONFIG: $(Build.Repository.LocalPath)/ansible.cfg

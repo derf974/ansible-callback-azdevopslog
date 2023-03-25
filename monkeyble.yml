@@ -1,0 +1,9 @@
+monkeyble_scenarios:
+  validate_test_1:
+    name: "Monkeyble Test 1"
+    tasks_to_test:
+      - task: "show id"
+        test_output:
+         - assert_equal:
+            result_key: rc
+            expected: 0
