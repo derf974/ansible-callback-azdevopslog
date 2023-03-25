@@ -29,7 +29,7 @@ class CallbackModule(CallbackBase):
         super(CallbackModule, self).__init__()
 
     def v2_playbook_on_task_start(self, task, is_conditional):
-        print('##[group]Beginning of a group')
+        print('##[group] log detail ...')
 
     def v2_on_any(self, *args, **kwargs):
         if type(args[0]) == TaskResult : 
