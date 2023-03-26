@@ -21,6 +21,7 @@ steps:
     playbookPathOnAgentMachine: 'playbook/demo.yml'
     inventoriesAgentMachine: 'hostList'
     inventoryHostListAgentMachine: 'localhost'
+    failOnStdErr: true
     args: >
       -vv
   env:
