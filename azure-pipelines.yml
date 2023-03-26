@@ -21,6 +21,8 @@ steps:
     playbookPathOnAgentMachine: 'playbook/demo.yml'
     inventoriesAgentMachine: 'hostList'
     inventoryHostListAgentMachine: 'localhost'
+    args: >
+      -vv
   env:
     ANSIBLE_CONFIG: $(Build.Repository.LocalPath)/ansible.cfg
 - script: |
